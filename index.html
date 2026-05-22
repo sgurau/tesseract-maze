@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tesseract Maze — A geometric illusion prototype exploring four-dimensional space through an interactive 3D maze experience.">
+    <title>Tesseract Maze — Geometric Illusion Prototype</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="hud">
+        <div id="gravity-indicator">
+            <div class="hud-label">GRAVITY</div>
+            <canvas id="gravity-canvas" width="80" height="80"></canvas>
+            <div id="gravity-name">DOWN</div>
+        </div>
+
+        <div id="score-display">
+            <div class="hud-label">PIECES</div>
+            <div id="score-value">0 / 3</div>
+        </div>
+
+        <div id="message-display"></div>
+
+        <div id="controls-hint">
+            <div class="hud-label">CONTROLS</div>
+            <div class="control-row"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</div>
+            <div class="control-row"><kbd>1</kbd>-<kbd>6</kbd> Gravity</div>
+            <div class="control-row"><kbd>Q</kbd>/<kbd>E</kbd> Rotate XW</div>
+            <div class="control-row"><kbd>R</kbd>/<kbd>F</kbd> Rotate YW</div>
+            <div class="control-row"><kbd>Space</kbd> Interact</div>
+            <div class="control-row"><kbd>Mouse</kbd> Orbit</div>
+        </div>
+    </div>
+
+    <div id="gravity-flash"></div>
+
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-shape"></div>
+            <div class="loader-text">INITIALIZING TESSERACT</div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
