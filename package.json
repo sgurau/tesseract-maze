@@ -13,7 +13,7 @@
   "author": "sgurau",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^9.0.0",
+    "eslint": "^10.11.0",
     "globals": "^15.0.0"
   }
 }
