@@ -26,8 +26,8 @@ export class GravitySystem {
     }
 
     switchTo(dirIndex) {
-        if (dirIndex === this.currentIndex || this.transitioning) return;
-        if (dirIndex < 0 || dirIndex >= DIRECTIONS.length) return;
+        if (dirIndex === this.currentIndex || this.transitioning) {return;}
+        if (dirIndex < 0 || dirIndex >= DIRECTIONS.length) {return;}
 
         this.transitioning = true;
         this.transitionProgress = 0;
@@ -49,7 +49,7 @@ export class GravitySystem {
     }
 
     update(delta) {
-        if (!this.transitioning) return;
+        if (!this.transitioning) {return;}
 
         this.transitionProgress += delta / this.transitionDuration;
 

@@ -55,7 +55,7 @@ export class UI {
     _drawGravityIndicator() {
         // Draw a stylized isometric cube wireframe on the 2D canvas
         // with an arrow inside pointing in the current gravity direction
-        if (!this.gravityCtx) return;
+        if (!this.gravityCtx) {return;}
         const ctx = this.gravityCtx;
         const w = this.gravityCanvas.width || 80;
         const h = this.gravityCanvas.height || 80;
@@ -135,18 +135,18 @@ export class UI {
     }
 
     showMessage(text, duration = 2000) {
-        if (!this.messageDisplay) return;
+        if (!this.messageDisplay) {return;}
         this.messageDisplay.textContent = text;
         this.messageDisplay.classList.add('visible');
 
-        if (this.messageTimeout) clearTimeout(this.messageTimeout);
+        if (this.messageTimeout) {clearTimeout(this.messageTimeout);}
         this.messageTimeout = setTimeout(() => {
             this.messageDisplay.classList.remove('visible');
         }, duration);
     }
 
     flashGravity(color) {
-        if (!this.gravityFlash) return;
+        if (!this.gravityFlash) {return;}
         this.gravityFlash.style.background =
             `radial-gradient(circle, ${color}40 0%, transparent 70%)`;
         this.gravityFlash.classList.remove('active');

@@ -63,7 +63,7 @@ export class TesseractMaze {
         const union = (a, b) => {
             const ra = find(a);
             const rb = find(b);
-            if (ra === rb) return false;
+            if (ra === rb) {return false;}
             if (rank[ra] < rank[rb]) {
                 parent[ra] = rb;
             } else if (rank[ra] > rank[rb]) {
@@ -206,7 +206,7 @@ export class TesseractMaze {
         }
 
         for (const idx of allIndices) {
-            if (pieceVertices.length >= 3) break;
+            if (pieceVertices.length >= 3) {break;}
             // Check non-adjacency to already picked vertices
             let adjacent = false;
             for (const pv of pieceVertices) {
@@ -225,7 +225,7 @@ export class TesseractMaze {
         // Pick 3 other random vertices for targets
         const targetVertices = [];
         for (const idx of allIndices) {
-            if (targetVertices.length >= 3) break;
+            if (targetVertices.length >= 3) {break;}
             if (!usedVertices.has(idx)) {
                 targetVertices.push(idx);
                 usedVertices.add(idx);
@@ -351,8 +351,8 @@ export class TesseractMaze {
     getAdjacentVertices(vertexIndex) {
         const adjacent = [];
         for (const [a, b] of this.mazeEdges) {
-            if (a === vertexIndex) adjacent.push(b);
-            if (b === vertexIndex) adjacent.push(a);
+            if (a === vertexIndex) {adjacent.push(b);}
+            if (b === vertexIndex) {adjacent.push(a);}
         }
         return adjacent;
     }

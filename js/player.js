@@ -63,12 +63,12 @@ export class Player {
         // Find the adjacent vertex whose direction from current best matches inputDirection
         // Start moving toward it
 
-        if (this.moving) return false;
+        if (this.moving) {return false;}
 
         const currentPos = this.maze.getVertexPosition(this.currentVertex);
         const adjacent = this.maze.getAdjacentVertices(this.currentVertex);
 
-        if (adjacent.length === 0) return false;
+        if (adjacent.length === 0) {return false;}
 
         // Transform input direction by camera orientation
         const cameraDir = new THREE.Vector3();
@@ -100,7 +100,7 @@ export class Player {
             }
         }
 
-        if (bestVertex < 0) return false;
+        if (bestVertex < 0) {return false;}
 
         this.targetVertex = bestVertex;
         this.moveProgress = 0;
@@ -112,7 +112,7 @@ export class Player {
         // If carrying a piece, try to place it at current vertex
         // If not carrying, try to pick up a piece at current vertex
 
-        if (this.moving) return null;
+        if (this.moving) {return null;}
 
         if (this.carrying) {
             // Try to place
@@ -168,7 +168,7 @@ export class Player {
 
         // Update trail
         this.trail.push(this.mesh.position.clone());
-        if (this.trail.length > this.trailMaxPoints) this.trail.shift();
+        if (this.trail.length > this.trailMaxPoints) {this.trail.shift();}
 
         const positions = this.trailLine.geometry.attributes.position.array;
         for (let i = 0; i < this.trail.length; i++) {
@@ -185,7 +185,7 @@ export class Player {
 
     // Apply gravity: slide player along edges in gravity direction
     applyGravity(gravityDir) {
-        if (this.moving) return;
+        if (this.moving) {return;}
 
         const currentPos = this.maze.getVertexPosition(this.currentVertex);
         const adjacent = this.maze.getAdjacentVertices(this.currentVertex);

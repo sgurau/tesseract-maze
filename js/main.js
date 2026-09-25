@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { initScene } from './scene.js';
 import { TesseractMaze } from './maze.js';
-import { GravitySystem, DIRECTIONS } from './gravity.js';
+import { GravitySystem } from './gravity.js';
 import { Player } from './player.js';
 import { SnapSystem } from './snap.js';
 import { UI } from './ui.js';
@@ -30,10 +30,10 @@ window.addEventListener('keydown', (e) => {
     keys[key] = true;
 
     // Also track arrow keys by their lowercase name for consistent lookup
-    if (e.key === 'ArrowUp') keys['arrowup'] = true;
-    if (e.key === 'ArrowDown') keys['arrowdown'] = true;
-    if (e.key === 'ArrowLeft') keys['arrowleft'] = true;
-    if (e.key === 'ArrowRight') keys['arrowright'] = true;
+    if (e.key === 'ArrowUp') {keys['arrowup'] = true;}
+    if (e.key === 'ArrowDown') {keys['arrowdown'] = true;}
+    if (e.key === 'ArrowLeft') {keys['arrowleft'] = true;}
+    if (e.key === 'ArrowRight') {keys['arrowright'] = true;}
 
     // Gravity switching: keys 1-6
     if (e.key >= '1' && e.key <= '6') {
@@ -43,10 +43,10 @@ window.addEventListener('keydown', (e) => {
 
     // 4D rotation
     const rotSpeed = 0.15; // radians per keypress
-    if (key === 'q') maze.rotateXW(-rotSpeed);
-    if (key === 'e') maze.rotateXW(rotSpeed);
-    if (key === 'r') maze.rotateYW(-rotSpeed);
-    if (key === 'f') maze.rotateYW(rotSpeed);
+    if (key === 'q') {maze.rotateXW(-rotSpeed);}
+    if (key === 'e') {maze.rotateXW(rotSpeed);}
+    if (key === 'r') {maze.rotateYW(-rotSpeed);}
+    if (key === 'f') {maze.rotateYW(rotSpeed);}
 
     // Player interaction
     if (e.key === ' ') {
@@ -62,17 +62,17 @@ window.addEventListener('keydown', (e) => {
     }
 
     // FPS toggle
-    if (key === 'p') ui.toggleFps();
+    if (key === 'p') {ui.toggleFps();}
 });
 
 window.addEventListener('keyup', (e) => {
     const key = e.key.toLowerCase();
     keys[key] = false;
 
-    if (e.key === 'ArrowUp') keys['arrowup'] = false;
-    if (e.key === 'ArrowDown') keys['arrowdown'] = false;
-    if (e.key === 'ArrowLeft') keys['arrowleft'] = false;
-    if (e.key === 'ArrowRight') keys['arrowright'] = false;
+    if (e.key === 'ArrowUp') {keys['arrowup'] = false;}
+    if (e.key === 'ArrowDown') {keys['arrowdown'] = false;}
+    if (e.key === 'ArrowLeft') {keys['arrowleft'] = false;}
+    if (e.key === 'ArrowRight') {keys['arrowright'] = false;}
 });
 
 // ---- Gravity Switch Callback ----
@@ -174,10 +174,10 @@ function animate() {
     // Player movement from held keys
     if (!gameWon) {
         const moveDir = new THREE.Vector3();
-        if (keys['w'] || keys['arrowup']) moveDir.z -= 1;
-        if (keys['s'] || keys['arrowdown']) moveDir.z += 1;
-        if (keys['a'] || keys['arrowleft']) moveDir.x -= 1;
-        if (keys['d'] || keys['arrowright']) moveDir.x += 1;
+        if (keys['w'] || keys['arrowup']) {moveDir.z -= 1;}
+        if (keys['s'] || keys['arrowdown']) {moveDir.z += 1;}
+        if (keys['a'] || keys['arrowleft']) {moveDir.x -= 1;}
+        if (keys['d'] || keys['arrowright']) {moveDir.x += 1;}
 
         if (moveDir.length() > 0) {
             moveDir.normalize();

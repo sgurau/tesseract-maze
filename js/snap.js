@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 export class SnapSystem {
     constructor() {
         this.snapDistance = 0.3;   // position threshold
@@ -17,11 +15,11 @@ export class SnapSystem {
      * @returns {'PERFECT'|'CLOSE'|'WRONG_TYPE'|'NONE'}
      */
     checkFit(piecePos, targetPos, pieceType, targetType) {
-        if (pieceType !== targetType) return 'WRONG_TYPE';
+        if (pieceType !== targetType) {return 'WRONG_TYPE';}
 
         const dist = piecePos.distanceTo(targetPos);
-        if (dist < this.snapDistance) return 'PERFECT';
-        if (dist < this.snapDistance * 3) return 'CLOSE';
+        if (dist < this.snapDistance) {return 'PERFECT';}
+        if (dist < this.snapDistance * 3) {return 'CLOSE';}
         return 'NONE';
     }
 

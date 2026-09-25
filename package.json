@@ -1,0 +1,19 @@
+{
+  "name": "tesseract-maze",
+  "version": "1.0.0",
+  "description": "A 3D spatial puzzle game built with Three.js that projects a 4D hypercube (tesseract) into 3D space",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint js/",
+    "lint:fix": "eslint js/ --fix",
+    "test": "echo \"No tests specified\" && exit 0",
+    "serve": "npx serve -l 3000"
+  },
+  "keywords": ["threejs", "webgl", "game", "4d", "tesseract"],
+  "author": "sgurau",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
+  }
+}
